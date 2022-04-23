@@ -20,6 +20,7 @@
   --border-color: #ececec;
   --icons-border-and-fill: #afb1b8;
   --margin-gap: 30px;
+  --modal-text: rgba(117, 117, 117, 0.5);
 }
 
 body {
@@ -292,6 +293,159 @@ button {
   height: 30px;
 }
 
+/*  ------------- Form ------------ */
+.form-modal {
+  padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-icon {
+  position: absolute;
+  top: 40%;
+  left: 12px;
+
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+}
+
+.form-icon.person {
+  background-image: url('../images/form/person-black.svg');
+}
+
+.form-icon.phone {
+  background-image: url('../images/form/phone-black.svg');
+}
+
+.form-icon.email {
+  background-image: url('../images/form/email-black.svg');
+}
+
+/* .form-modal:focus-within {
+  background-color: red;
+} */
+
+.form-input-modal {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+}
+
+.form-box label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  text-align: left;
+  padding-bottom: 4px;
+
+  color: var(--secondary-text-color);
+}
+
+.form-modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+
+  color: var(--primary-text-color);
+}
+
+.form-box .comment {
+  height: 120px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--modal-text);
+}
+
+.form-box-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-box-bottom .field {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  /* visually-hidden */
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.icon-check {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--primary-text-color);
+  border-radius: 2px;
+
+  margin-right: 7px;
+}
+
+.checkbox:checked + .icon-check {
+  background-color: var(--accent-blue-color);
+  border-color: var(--accent-blue-color);
+  background-image: url('../images/form/icon\ check.svg');
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.form-policy {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+}
+
+.form-policy.underline {
+  text-decoration-line: underline;
+  color: var(--accent-blue-color);
+}
+
+.form-submit {
+  width: 200px;
+  height: 50px;
+
+  margin-top: 30px;
+  padding: 10px 55px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+
+  background-color: var(--accent-blue-color);
+  color: var(--white-color);
+}
 /* Section class for Features, What we do, Our Team, Portfolio*/
 .section {
   padding-top: 94px;
@@ -560,7 +714,8 @@ footer {
   align-items: baseline;
 }
 
-.box2 > .title {
+.box2 > .title,
+.box3 > .title {
   font-size: 14px;
   font-weight: 700;
   line-height: 1.14;
@@ -611,6 +766,61 @@ footer {
 
 .social-list + .social-list {
   margin-left: 10px;
+}
+
+.box3 {
+  margin-left: 93px;
+}
+
+.box3 .title {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: baseline;
+  justify-content: baseline;
+}
+.form-input {
+  width: 358px;
+  height: 50px;
+  padding-left: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  background-color: var(--secondary-dark-bcg-color);
+  color: var(--white-color);
+}
+
+.form-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  height: 50px;
+  margin-left: 12px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--accent-blue-color);
+  border-radius: 4px;
+
+  color: var(--white-color);
+  background-color: var(--accent-blue-color);
+}
+
+.form-button::after {
+  display: inline-block;
+  content: '';
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+
+  background-image: url('../images/form/icon\ send.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* ----------- Portfolio -----------*/
