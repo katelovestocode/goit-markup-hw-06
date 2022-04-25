@@ -59,20 +59,21 @@
 
     <main>
       <!-- Hero -->
-
       <section class="hero">
         <h1 class="hero-title">
           Эффективные решения <br />
           для вашего бизнеса
         </h1>
         <button type="button" class="button" data-modal-open>Заказать услугу</button>
+
+        <!-- Modal -->
         <div class="backdrop is-hidden" data-modal>
           <div class="modal">
             <form class="form-modal">
               <p class="form-modal-title">Оставьте свои данные, мы вам перезвоним</p>
               <div class="form-box">
                 <label for="name" class="form-label-modal"> Имя </label>
-                <span class="form-icon person"> </span>
+
                 <input
                   type="text"
                   name="user-name"
@@ -81,12 +82,18 @@
                   placeholder=" "
                   autofocus
                 />
+                <svg class="form-icon person" width="18" height="18">
+                  <use href="./images/svg/icons.svg#icon-person-black"></use>
+                </svg>
               </div>
 
               <div class="form-box">
                 <label for="tel" class="form-label-modal"> Телефон </label>
                 <span class="form-icon phone"> </span>
                 <input type="tel" name="tel" id="tel" class="form-input-modal" placeholder=" " />
+                <svg class="form-icon person" width="18" height="18">
+                  <use href="./images/svg/icons.svg#icon-phone-black"></use>
+                </svg>
               </div>
 
               <div class="form-box">
@@ -99,6 +106,9 @@
                   class="form-input-modal"
                   placeholder=" "
                 />
+                <svg class="form-icon person" width="18" height="18">
+                  <use href="./images/svg/icons.svg#icon-email-black"></use>
+                </svg>
               </div>
 
               <div class="form-box">
@@ -123,7 +133,11 @@
               </div>
               <button type="submit" class="form-submit">Отправить</button>
             </form>
-            <button class="close" data-modal-close></button>
+            <button class="close" data-modal-close>
+              <svg class="close-svg" width="18" height="18">
+                <use href="./images/svg/icons.svg#icon-close-black"></use>
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -442,6 +456,7 @@
                 </svg>
               </a>
             </li>
+
             <li class="client-list">
               <a href="" class="client-link">
                 <svg class="client-icon">
@@ -449,6 +464,7 @@
                 </svg>
               </a>
             </li>
+
             <li class="client-list">
               <a href="" class="client-link">
                 <svg class="client-icon">
@@ -456,6 +472,7 @@
                 </svg>
               </a>
             </li>
+
             <li class="client-list">
               <a href="" class="client-link">
                 <svg class="client-icon">

@@ -21,6 +21,7 @@
   --icons-border-and-fill: #afb1b8;
   --margin-gap: 30px;
   --modal-text: rgba(117, 117, 117, 0.5);
+  --modal-border-gray: rgba(33, 33, 33, 0.2);
 }
 
 body {
@@ -84,17 +85,15 @@ header {
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
-
-  /* outline: 2px solid tomato; */
 }
 
-/* Main-Nav */
+/* --------- Main-Nav ----------*/
 .main-nav {
   display: flex;
   align-items: center;
 }
 
-/* ------- Site Navigation --------- */
+/* --------- Site Navigation --------- */
 .site-nav {
   display: flex;
   margin-left: 93px;
@@ -283,14 +282,36 @@ button {
 }
 
 .modal .close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
   position: absolute;
   top: 8px;
   right: 8px;
 
-  background-image: url('../images/svg/close.svg');
-  background-color: transparent;
   width: 30px;
   height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-color: var(--modal-border-gray);
+  /* padding: 6px; */
+
+  background-color: transparent;
+  color: var(--primary-text-color);
+  cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal .close-svg {
+  fill: currentColor;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+  color: var(--accent-blue-color);
 }
 
 /*  ------------- Form ------------ */
@@ -310,35 +331,26 @@ button {
   position: absolute;
   top: 40%;
   left: 12px;
-
-  display: inline-block;
-  width: 18px;
-  height: 18px;
+  color: var(--primary-text-color);
 }
-
-.form-icon.person {
-  background-image: url('../images/form/person-black.svg');
-}
-
-.form-icon.phone {
-  background-image: url('../images/form/phone-black.svg');
-}
-
-.form-icon.email {
-  background-image: url('../images/form/email-black.svg');
-}
-
-/* .form-modal:focus-within {
-  background-color: red;
-} */
 
 .form-input-modal {
   width: 100%;
   height: 40px;
   margin-bottom: 10px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
+  border: 1px solid var(--modal-border-gray);
   border-radius: 4px;
   padding-left: 42px;
+  cursor: pointer;
+}
+
+.form-input-modal:focus + .form-icon {
+  fill: var(--accent-blue-color);
+}
+
+.form-input-modal:focus {
+  outline: none;
+  border: 1px solid var(--accent-blue-color);
 }
 
 .form-box label {
@@ -445,8 +457,9 @@ button {
 
   background-color: var(--accent-blue-color);
   color: var(--white-color);
+  cursor: pointer;
 }
-/* Section class for Features, What we do, Our Team, Portfolio*/
+/* --- Section class for Features, What we do, Our Team, Portfolio -----*/
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -509,7 +522,7 @@ button {
   height: 70px;
 }
 
-/* ------ What We Do -------- */
+/* --------- What We Do --------- */
 
 .examples-list {
   display: flex;
@@ -545,7 +558,7 @@ button {
   justify-content: center;
 }
 
-/* ------- Our Team -------- */
+/* ---------- Our Team ----------- */
 
 .team {
   background-color: var(--third-bcg-color);
@@ -554,10 +567,6 @@ button {
 .team-list {
   display: flex;
 }
-
-/* .item * {
-  outline: 2px solid tomato;
-} */
 
 .team-list > .item + .item {
   margin-left: var(--margin-gap);
@@ -679,7 +688,7 @@ button {
   margin-left: var(--margin-gap);
 }
 
-/* --------- Footer ----------- */
+/* ----------- Footer ------------ */
 
 footer {
   padding: 60px 0;
@@ -823,12 +832,12 @@ footer {
   background-repeat: no-repeat;
 }
 
-/* ----------- Portfolio -----------*/
+/* ------------- Portfolio -------------*/
 a {
   text-decoration: none;
 }
 
-/* ------- Filter buttons ---------- */
+/* ---------- Filter buttons ------------ */
 .buttons-filter {
   display: flex;
   justify-content: center;
@@ -869,7 +878,7 @@ a {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* ------ Card-Set ------- */
+/* --------- Card-Set ---------- */
 
 .card-set {
   display: flex;
@@ -888,6 +897,7 @@ a {
 
 .cards-link {
   display: flex;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cards-link:hover,
@@ -917,7 +927,7 @@ a {
   line-height: 1.87;
 }
 
-/*  ----- Overlay ------ */
+/*  ---------- Overlay ----------- */
 
 .cards-thumb {
   position: relative;
